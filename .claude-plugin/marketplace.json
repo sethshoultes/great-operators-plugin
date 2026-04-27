@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "great-operators",
+  "description": "Nine operations personas (Cook, Grove, Munger, McCord, Deming, Ohno, Horowitz, Walton, Kelleher) + four MVP skills for operating plans, process reviews, and project initialization. Drafted via cross-plugin orchestration with great-authors writers. v0.1 MVP.",
+  "owner": {
+    "name": "Seth Shoultes",
+    "url": "https://github.com/sethshoultes"
+  },
+  "plugins": [
+    {
+      "name": "great-operators",
+      "description": "Nine operations personas + four operational skills (operators-channel, operators-project-init, operators-write-plan, operators-ops-review). Companion to great-minds, great-authors, great-filmmakers, great-publishers, great-marketers, great-engineers, great-designers. For Claude Code.",
+      "source": "./",
+      "category": "productivity"
+    },
+    {
+      "name": "great-operators-dxt",
+      "description": "Same personas and skills as great-operators, packaged as a Claude Desktop extension. Build: cd distribution/dxt && npm install && npx @anthropic-ai/dxt pack",
+      "source": "./distribution/dxt",
+      "category": "productivity"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "great-operators",
+  "version": "0.1.0",
+  "description": "Nine operations personas (Cook, Grove, Munger, McCord, Deming, Ohno, Horowitz, Walton, Kelleher) plus four operational skills for operating plans, process reviews, and project initialization. Drafted by great-authors writers via cross-plugin orchestration. Eighth in the Caseproof persona constellation. Warren Buffett stays in great-minds for strategic capital allocation (cross-dispatchable); operators handles execution craft.",
+  "author": {
+    "name": "Seth Shoultes",
+    "url": "https://github.com/sethshoultes"
+  },
+  "repository": "https://github.com/sethshoultes/great-operators-plugin",
+  "license": "MIT",
+  "keywords": ["operations", "management", "ops", "execution", "supply-chain", "personas", "claude-code-plugin"]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "great-operators",
+  "version": "0.1.0",
+  "description": "Nine operations personas + four operational skills for operations, management, and execution craft. Claude Code plugin.",
+  "license": "MIT",
+  "author": "Seth Shoultes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sethshoultes/great-operators-plugin"
+  },
+  "keywords": ["operations", "management", "ops", "execution", "supply-chain", "claude-code-plugin"],
+  "scripts": {
+    "test": "bash tests/smoke.sh"
+  }
+}

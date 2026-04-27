@@ -1,0 +1,42 @@
+{
+  "dxt_version": "0.1",
+  "name": "great-operators",
+  "display_name": "Great Operators",
+  "version": "0.1.0",
+  "description": "Nine operations personas (Cook, Grove, Munger, McCord, Deming, Ohno, Horowitz, Walton, Kelleher) plus four MVP tools for operating plans, process reviews, and project initialization. Drafted via cross-plugin orchestration with great-authors writers. Warren Buffett stays in great-minds (cross-dispatchable for strategic capital allocation).",
+  "long_description": "Channel operations craft from nine canonical figures: Tim Cook on supply chain at scale, Andy Grove on management craft and OKRs, Charlie Munger on decision-quality and mental models, Patty McCord on people-ops, W. Edwards Deming on quality and process, Taiichi Ohno on production flow and lean, Ben Horowitz on startup wartime ops, Sam Walton on retail logistics, Herb Kelleher on ops-as-culture. Pair with great-authors (prose), great-filmmakers (film), great-publishers (publication form), great-marketers (marketing), great-engineers (software craft), great-designers (design craft), great-minds (strategy + Warren Buffett on capital allocation, cross-dispatchable) to compose a full creative-engineering-design-operations pipeline. Substantive output saves to operations/<artifact-type>/<slug>.md by default.",
+  "author": {
+    "name": "Seth Shoultes",
+    "email": "seth@caseproof.com"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"]
+    }
+  },
+  "tools": [
+    {
+      "name": "list_operators",
+      "description": "List the nine operations personas with one-line descriptions of each."
+    },
+    {
+      "name": "operators_channel",
+      "description": "Return a prompt that loads a named operations persona into the conversation for direct collaboration on supply chain, management craft, decision-quality, people-ops, quality systems, production flow, startup-velocity ops, retail logistics, or ops-as-culture. Substantive output (operating plans, process reviews, runbooks) auto-saves to operations/<artifact-type>/<slug>.md. Valid: tim-cook, andy-grove, charlie-munger, patty-mccord, w-edwards-deming, taiichi-ohno, ben-horowitz, sam-walton, herb-kelleher (short forms accepted: cook, grove, munger, mccord, deming, ohno, horowitz, walton, kelleher). For strategic capital allocation, dispatch great-minds:warren-buffett-persona instead."
+    },
+    {
+      "name": "operators_project_init",
+      "description": "Return a prompt that scaffolds an operations/ directory at the project root (sibling to manuscript/, film/, publishers/, marketing/, engineering/, design/) and updates CLAUDE.md with an ## Operations section. Subdirs: plans/, reviews/, systems/. Reads the project specification (README, CLAUDE.md, prior plans, SOPs) to import context."
+    },
+    {
+      "name": "operators_write_plan",
+      "description": "Return a prompt that produces an operating plan / playbook / runbook for a focus area, function, or quarter. Default persona auto-selected by signal — Cook for supply chain, Grove for management/OKRs, Munger for decision-quality, McCord for people, Deming for quality, Ohno for production flow, Horowitz for startup wartime, Walton for retail, Kelleher for ops-as-culture. Override available. Saves to operations/plans/<slug>.md."
+    },
+    {
+      "name": "operators_ops_review",
+      "description": "Return a prompt that dispatches operations personas to review an existing process, system, or operating plan. Default panel: Cook + Grove + Deming. Override available. Output is a consolidated review with per-persona verdicts and a single highest-leverage recommendation. Saves to operations/reviews/<slug>.md."
+    }
+  ]
+}
