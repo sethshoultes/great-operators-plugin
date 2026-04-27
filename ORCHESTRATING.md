@@ -99,6 +99,25 @@ For cross-craft projects (a publishing imprint with operations, a film studio wi
 
 When the operations bible is missing, the FIRST move on any new operations project is to scaffold one — at minimum a CLAUDE.md and an `operations/systems/overview.md`. The bible is the constellation's coordination layer.
 
+## Stall-resolution dispatch (canonical) — Cagan
+
+When an autonomous pipeline (Shipyard AI, or any cron-driven multi-agent system using constellation personas) starts accumulating analysis docs without commits, that's the **analysis-as-progress fallacy** and the canonical fix is to dispatch Cagan from this plugin. His role in that loop is not "another product analyst" — it is "force the build-or-kill decision." The four risks are the question that ends the analysis loop:
+
+> Which of value / usability / feasibility / viability did the analyses test, and was the answer no?
+
+Reference dispatch from a stall-detector daemon:
+
+```js
+Agent({
+  subagent_type: "great-operators:marty-cagan-operator",
+  prompt: "Stall detected for project <slug>. Reasons: <reasons>. Read the analysis docs in <path>. Write a build-or-kill recommendation to <path>/cagan-decision.md. Recommend ONE of: BUILD (with smallest viable scope and the riskiest assumption to test first), PIVOT (with the new framing), or KILL (with the reason the four risks failed). Do NOT defer. Do NOT request more analysis."
+})
+```
+
+**Hard cap (load-bearing):** `max_per_project_per_week: 2`. After two dispatches on the same project without progress, the third is the **escalation to the human**, not another Cagan dispatch. Don't loop.
+
+The pattern is documented in detail in `great-minds-plugin/docs/STALLED-PIPELINES.md` and worked end-to-end in [shipyard-ai/docs/PRODUCT-MANAGEMENT-GAP.md](https://github.com/sethshoultes/shipyard-ai/blob/main/docs/PRODUCT-MANAGEMENT-GAP.md). When designing a consumer system that uses constellation personas in a pipeline, build the stall-detector + Cagan loop as infrastructure in your consumer system; do NOT add it inside this plugin (that would bend the constellation's "channels vs. infrastructure" rule — see `brain/projects/caseproof-ai-company-constellation.md`).
+
 ## Cross-plugin orchestration
 
 The operators plugin composes with the rest of the constellation:
